@@ -1,11 +1,3 @@
 require 'serverspec'
-
-include Serverspec::Helper::Exec
-include Serverspec::Helper::DetectOS
-
-RSpec.configure do |c|
-  c.before :all do
-    c.path = '/sbin:/usr/sbin'
-  end
-end
-
+set :disable_sudo, false
+set :backend, :exec
